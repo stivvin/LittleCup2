@@ -1,4 +1,4 @@
-DungeonMons2:
+CeruleanCave2FWildMons:
 	def_grass_wildmons 15 ; encounter rate
 	db 5, DODUO
 	db 5, VENONAT

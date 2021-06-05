@@ -1,4 +1,4 @@
-ZoneMons2:
+SafariZoneNorthWildMons:
 	def_grass_wildmons 30 ; encounter rate
 	db 5, NIDORAN_M
 	db 5, RHYHORN

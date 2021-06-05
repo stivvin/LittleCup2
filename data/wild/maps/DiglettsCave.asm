@@ -1,4 +1,4 @@
-CaveMons:
+DiglettsCaveWildMons:
 	def_grass_wildmons 20 ; encounter rate
 	db 5, DIGLETT
 	db 5, DIGLETT

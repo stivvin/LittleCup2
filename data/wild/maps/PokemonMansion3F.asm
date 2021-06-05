@@ -1,4 +1,4 @@
-MansionMons3:
+PokemonMansion3FWildMons:
 	def_grass_wildmons 10 ; encounter rate
 	db 5, GRIMER ; 20%
 	db 5, KOFFING ; 20%

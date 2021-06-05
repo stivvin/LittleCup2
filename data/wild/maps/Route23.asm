@@ -1,4 +1,4 @@
-Route23Mons:
+Route23WildMons:
 	def_grass_wildmons 10 ; encounter rate
 	db 5, EKANS
 	db 5, SANDSHREW

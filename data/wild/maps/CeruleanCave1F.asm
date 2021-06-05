@@ -1,4 +1,4 @@
-DungeonMons1:
+CeruleanCave1FWildMons:
 	def_grass_wildmons 10 ; encounter rate
 	db 5, ZUBAT
 	db 5, DROWZEE

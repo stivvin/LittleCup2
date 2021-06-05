@@ -1,4 +1,4 @@
-DungeonMonsB1:
+CeruleanCaveB1FWildMons:
 	def_grass_wildmons 25 ; encounter rate
 	db 5, RHYHORN
 	db 5, CUBONE

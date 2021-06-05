@@ -1,4 +1,4 @@
-Route13Mons:
+Route13WildMons:
 	def_grass_wildmons 20 ; encounter rate
 	db 5, BELLSPROUT
 	db 5, PIDGEY

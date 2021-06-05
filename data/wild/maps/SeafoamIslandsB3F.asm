@@ -1,4 +1,4 @@
-IslandMonsB3:
+SeafoamIslandsB3FWildMons:
 	def_grass_wildmons 10 ; encounter rate
 	db 5, SLOWPOKE
 	db 5, SEEL

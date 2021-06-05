@@ -1,4 +1,4 @@
-Route5Mons:
+Route5WildMons:
 	def_grass_wildmons 15 ; encounter rate
 	db 5, ODDISH
 	db 5, PIDGEY

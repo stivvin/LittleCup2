@@ -1,4 +1,4 @@
-IslandMonsB1:
+SeafoamIslandsB1FWildMons:
 	def_grass_wildmons 10 ; encounter rate
 	db 5, STARYU
 	db 5, HORSEA

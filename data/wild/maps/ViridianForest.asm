@@ -1,4 +1,4 @@
-ForestMons:
+ViridianForestWildMons:
 	def_grass_wildmons 8 ; encounter rate
 	db  5, WEEDLE
 	db  5, CATERPIE

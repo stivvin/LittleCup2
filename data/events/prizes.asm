@@ -37,7 +37,7 @@ PrizeMenuTMsEntries:
 	db "@"
 
 PrizeMenuTMsCost:
-	coins 3300
-	coins 5500
-	coins 7700
+	bcd2 3300
+	bcd2 5500
+	bcd2 7700
 	db "@"

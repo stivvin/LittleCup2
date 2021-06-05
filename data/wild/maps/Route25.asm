@@ -1,4 +1,4 @@
-Route25Mons:
+Route25WildMons:
 	def_grass_wildmons 15 ; encounter rate
 	db 5, WEEDLE
 	db 5, CATERPIE

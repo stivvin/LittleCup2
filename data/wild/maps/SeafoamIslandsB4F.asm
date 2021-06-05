@@ -1,4 +1,4 @@
-IslandMonsB4:
+SeafoamIslandsB4FWildMons:
 	def_grass_wildmons 10 ; encounter rate
 	db 5, HORSEA
 	db 5, SHELLDER

@@ -1,4 +1,4 @@
-TowerMons6:
+PokemonTower6FWildMons:
 	def_grass_wildmons 15 ; encounter rate
 	db 5, GASTLY
 	db 5, GASTLY

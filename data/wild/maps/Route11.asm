@@ -1,4 +1,4 @@
-Route11Mons:
+Route11WildMons:
 	def_grass_wildmons 15 ; encounter rate
 	db 5, SANDSHREW
 	db 5, SPEAROW

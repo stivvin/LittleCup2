@@ -1,4 +1,4 @@
-Route10Mons:
+Route10WildMons:
 	def_grass_wildmons 15 ; encounter rate
 	db 5, VOLTORB
 	db 5, SPEAROW
