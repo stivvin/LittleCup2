@@ -26,7 +26,7 @@ ItemUsePtrTable:
 	dw ItemUseSurfboard  ; out-of-battle Surf effect
 	dw ItemUseBall       ; SAFARI_BALL
 	dw ItemUsePokedex    ; POKEDEX
-	dw ItemUseEvoStone   ; MOON_STONE
+	dw UnusableItem      ; MOON_STONE
 	dw ItemUseMedicine   ; ANTIDOTE
 	dw ItemUseMedicine   ; BURN_HEAL
 	dw ItemUseMedicine   ; ICE_HEAL
@@ -48,22 +48,22 @@ ItemUsePtrTable:
 	dw ItemUseEscapeRope ; ESCAPE_ROPE
 	dw ItemUseRepel      ; REPEL
 	dw UnusableItem      ; OLD_AMBER
-	dw ItemUseEvoStone   ; FIRE_STONE
-	dw ItemUseEvoStone   ; THUNDER_STONE
-	dw ItemUseEvoStone   ; WATER_STONE
-	dw ItemUseVitamin    ; HP_UP
-	dw ItemUseVitamin    ; PROTEIN
-	dw ItemUseVitamin    ; IRON
-	dw ItemUseVitamin    ; CARBOS
-	dw ItemUseVitamin    ; CALCIUM
-	dw ItemUseVitamin    ; RARE_CANDY
+	dw UnusableItem      ; FIRE_STONE
+	dw UnusableItem      ; THUNDER_STONE
+	dw UnusableItem      ; WATER_STONE
+	dw UnusableItem      ; HP_UP
+	dw UnusableItem      ; PROTEIN
+	dw UnusableItem      ; IRON
+	dw UnusableItem      ; CARBOS
+	dw UnusableItem      ; CALCIUM
+	dw UnusableItem      ; RARE_CANDY
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
 	dw UnusableItem      ; SECRET_KEY
 	dw UnusableItem
 	dw UnusableItem      ; BIKE_VOUCHER
-	dw ItemUseXAccuracy  ; X_ACCURACY
-	dw ItemUseEvoStone   ; LEAF_STONE
+	dw UnusableItem      ; X_ACCURACY
+	dw UnusableItem      ; LEAF_STONE
 	dw ItemUseCardKey    ; CARD_KEY
 	dw UnusableItem      ; NUGGET
 	dw UnusableItem      ; ??? PP_UP
@@ -71,20 +71,20 @@ ItemUsePtrTable:
 	dw ItemUseMedicine   ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
 	dw ItemUseMedicine   ; MAX_REVIVE
-	dw ItemUseGuardSpec  ; GUARD_SPEC
+	dw UnusableItem      ; GUARD_SPEC
 	dw ItemUseSuperRepel ; SUPER_REPL
 	dw ItemUseMaxRepel   ; MAX_REPEL
-	dw ItemUseDireHit    ; DIRE_HIT
+	dw UnusableItem      ; DIRE_HIT
 	dw UnusableItem      ; COIN
 	dw ItemUseMedicine   ; FRESH_WATER
 	dw ItemUseMedicine   ; SODA_POP
 	dw ItemUseMedicine   ; LEMONADE
 	dw UnusableItem      ; S_S_TICKET
 	dw UnusableItem      ; GOLD_TEETH
-	dw ItemUseXStat      ; X_ATTACK
-	dw ItemUseXStat      ; X_DEFEND
-	dw ItemUseXStat      ; X_SPEED
-	dw ItemUseXStat      ; X_SPECIAL
+	dw UnusableItem      ; X_ATTACK
+	dw UnusableItem      ; X_DEFEND
+	dw UnusableItem      ; X_SPEED
+	dw UnusableItem      ; X_SPECIAL
 	dw ItemUseCoinCase   ; COIN_CASE
 	dw ItemUseOaksParcel ; OAKS_PARCEL
 	dw ItemUseItemfinder ; ITEMFINDER
@@ -803,6 +803,9 @@ ItemUseVitamin:
 	jp nz, ItemUseNotTime
 
 ItemUseMedicine:
+	ld a, [wIsInBattle]
+	and a
+	jp nz, ItemUseNotTime ; can't use medicine in battle
 	ld a, [wPartyCount]
 	and a
 	jp z, .emptyParty
@@ -853,7 +856,7 @@ ItemUseMedicine:
 ; if using softboiled
 	ld a, [wWhichPokemon]
 	cp d ; is the pokemon trying to use softboiled on itself?
-	jr z, ItemUseMedicine ; if so, force another choice
+	jp z, ItemUseMedicine ; if so, force another choice
 .checkItemType
 	ld a, [wcf91]
 	cp REVIVE
@@ -1280,14 +1283,15 @@ ItemUseMedicine:
 	jr nc, .noCarry2
 	inc h
 .noCarry2
-	ld a, 10
-	ld b, a
-	ld a, [hl] ; a = MSB of stat experience of the appropriate stat
-	cp 100 ; is there already at least 25600 (256 * 100) stat experience?
-	jr nc, .vitaminNoEffect ; if so, vitamins can't add any more
-	add b ; add 2560 (256 * 10) stat experience
-	jr nc, .noCarry3 ; a carry should be impossible here, so this will always jump
-	ld a, 255
+	jr .vitaminNoEffect
+;	ld a, 10
+;	ld b, a
+;	ld a, [hl] ; a = MSB of stat experience of the appropriate stat
+;	cp 100 ; is there already at least 25600 (256 * 100) stat experience?
+;	jr nc, .vitaminNoEffect ; if so, vitamins can't add any more
+;	add b ; add 2560 (256 * 10) stat experience
+;	jr nc, .noCarry3 ; a carry should be impossible here, so this will always jump
+;	ld a, 255
 .noCarry3
 	ld [hl], a
 	pop hl
@@ -1524,7 +1528,7 @@ ItemUseEscapeRope:
 INCLUDE "data/tilesets/escape_rope_tilesets.asm"
 
 ItemUseRepel:
-	ld b, 100
+	ld b, 50
 
 ItemUseRepelCommon:
 	ld a, [wIsInBattle]
@@ -1614,11 +1618,11 @@ ItemUseGuardSpec:
 	jp PrintItemUseTextAndRemoveItem
 
 ItemUseSuperRepel:
-	ld b, 200
+	ld b, 100
 	jp ItemUseRepelCommon
 
 ItemUseMaxRepel:
-	ld b, 250
+	ld b, 125
 	jp ItemUseRepelCommon
 
 ItemUseDireHit:
