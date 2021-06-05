@@ -76,7 +76,7 @@ SpecialTrainerMoves:
 	db 1, BODY_SLAM, NO_MOVE, NO_MOVE, NO_MOVE
 	db 0
 
-	db Rival2, 1 ; squirtle
+	db RIVAL2, 1 ; squirtle
 	; rattata
 	db 2, TACKLE, WATER_GUN, NO_MOVE, NO_MOVE
 	; abra
@@ -87,7 +87,7 @@ SpecialTrainerMoves:
 	db 6, BUBBLEBEAM, BODY_SLAM, DIG, NO_MOVE
 	db 0
 
-	db Rival2, 2 ; bulbasaur
+	db RIVAL2, 2 ; bulbasaur
 	; rattata
 	db 2, TACKLE, WATER_GUN, NO_MOVE, NO_MOVE
 	; abra
@@ -100,7 +100,7 @@ SpecialTrainerMoves:
 	db 6, BODY_SLAM, NO_MOVE, NO_MOVE, NO_MOVE
 	db 0
 
-	db Rival2, 3 ; charmander
+	db RIVAL2, 3 ; charmander
 	; rattata
 	db 2, TACKLE, WATER_GUN, NO_MOVE, NO_MOVE
 	; abra
