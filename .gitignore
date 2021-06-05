@@ -28,3 +28,6 @@
 *.sn*
 *.sa*
 *.sg1
+
+# mac noise
+.DS_Store
