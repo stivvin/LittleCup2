@@ -1372,21 +1372,22 @@ EnemySendOutFirstMon:
 	cp LINK_STATE_BATTLING
 	jr z, .next4
 	ld a, [wOptions]
-	bit 6, a
-	jr nz, .next4
-	ld hl, TrainerAboutToUseText
-	call PrintText
-	hlcoord 0, 7
-	lb bc, 8, 1
-	ld a, TWO_OPTION_MENU
-	ld [wTextBoxID], a
-	call DisplayTextBoxID
-	ld a, [wCurrentMenuItem]
-	and a
-	jr nz, .next4
-	ld a, BATTLE_PARTY_MENU
-	ld [wPartyMenuTypeOrMessageID], a
-	call DisplayPartyMenu
+;	bit 6, a
+;	jr nz, .next4
+	jr .next4
+;	ld hl, TrainerAboutToUseText
+;	call PrintText
+;	hlcoord 0, 7
+;	lb bc, 8, 1
+;	ld a, TWO_OPTION_MENU
+;	ld [wTextBoxID], a
+;	call DisplayTextBoxID
+;	ld a, [wCurrentMenuItem]
+;	and a
+;	jr nz, .next4
+;	ld a, BATTLE_PARTY_MENU
+;	ld [wPartyMenuTypeOrMessageID], a
+;	call DisplayPartyMenu
 .next9
 	ld a, 1
 	ld [wCurrentMenuItem], a
@@ -1507,6 +1508,8 @@ TryRunningFromBattle:
 	ld a, [wNumRunAttempts]
 	inc a
 	ld [wNumRunAttempts], a
+	cp $2
+	jp c, .cantEscape
 	ld a, [hli]
 	ldh [hMultiplicand + 1], a
 	ld a, [hl]
@@ -1521,7 +1524,7 @@ TryRunningFromBattle:
 	ld hl, hEnemySpeed
 	ld c, 2
 	call StringCmp
-	jr nc, .canEscape ; jump if player speed greater than enemy speed
+;	jr nc, .canEscape ; jump if player speed greater than enemy speed
 	xor a
 	ldh [hMultiplicand], a
 	ld a, 32
@@ -1566,7 +1569,7 @@ TryRunningFromBattle:
 	cp b
 	jr nc, .canEscape ; if the random value was less than or equal to the quotient
 	                  ; plus 30 times the number of attempts, the player can escape
-; can't escape
+.cantEscape
 	ld a, $1
 	ld [wActionResultOrTookBattleTurn], a ; you lose your turn when you can't escape
 	ld hl, CantEscapeText
@@ -6553,56 +6556,6 @@ CalculateModifiedStat:
 	ret
 
 ApplyBadgeStatBoosts:
-	ld a, [wLinkState]
-	cp LINK_STATE_BATTLING
-	ret z ; return if link battle
-	ld a, [wObtainedBadges]
-	ld b, a
-	ld hl, wBattleMonAttack
-	ld c, $4
-; the boost is applied for badges whose bit position is even
-; the order of boosts matches the order they are laid out in RAM
-; Boulder (bit 0) - attack
-; Thunder (bit 2) - defense
-; Soul (bit 4) - speed
-; Volcano (bit 6) - special
-.loop
-	srl b
-	call c, .applyBoostToStat
-	inc hl
-	inc hl
-	srl b
-	dec c
-	jr nz, .loop
-	ret
-
-; multiply stat at hl by 1.125
-; cap stat at MAX_STAT_VALUE
-.applyBoostToStat
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	srl d
-	rr e
-	srl d
-	rr e
-	srl d
-	rr e
-	ld a, [hl]
-	add e
-	ld [hld], a
-	ld a, [hl]
-	adc d
-	ld [hli], a
-	ld a, [hld]
-	sub LOW(MAX_STAT_VALUE)
-	ld a, [hl]
-	sbc HIGH(MAX_STAT_VALUE)
-	ret c
-	ld a, HIGH(MAX_STAT_VALUE)
-	ld [hli], a
-	ld a, LOW(MAX_STAT_VALUE)
-	ld [hld], a
 	ret
 
 LoadHudAndHpBarAndStatusTilePatterns:

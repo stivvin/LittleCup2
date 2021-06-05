@@ -23,6 +23,12 @@ _CeladonMart5Text2::
 	line "DEFENSE!"
 	done
 
+_CeladonMart5Text3::
+	text "My potions are too"
+	line "strong for you,"
+	cont "traveller."
+	done
+
 _CeladonMart5Text5::
 	text "5F: DRUG STORE"
 	done

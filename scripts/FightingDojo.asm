@@ -231,7 +231,7 @@ FightingDojoText6:
 	call PrintText
 	jr .done
 .GetMon
-	ld a, HITMONLEE
+	ld a, MANKEY
 	call DisplayPokedex
 	ld hl, WantHitmonleeText
 	call PrintText
@@ -241,7 +241,7 @@ FightingDojoText6:
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
-	ld c, 30
+	ld c, 5
 	call GivePokemon
 	jr nc, .done
 
@@ -266,7 +266,7 @@ FightingDojoText7:
 	call PrintText
 	jr .done
 .GetMon
-	ld a, HITMONCHAN
+	ld a, MACHOP
 	call DisplayPokedex
 	ld hl, WantHitmonchanText
 	call PrintText
@@ -276,7 +276,7 @@ FightingDojoText7:
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
-	ld c, 30
+	ld c, 5
 	call GivePokemon
 	jr nc, .done
 	SetEvents EVENT_GOT_HITMONCHAN, EVENT_DEFEATED_FIGHTING_DOJO
