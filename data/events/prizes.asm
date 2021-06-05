@@ -13,9 +13,9 @@ PrizeMenuMon1Entries:
 	db "@"
 
 PrizeMenuMon1Cost:
-	coins 120
-	coins 500
-	coins 120
+	bcd2 120
+	bcd2 500
+	bcd2 120
 	db "@"
 
 PrizeMenuMon2Entries:
@@ -25,9 +25,9 @@ PrizeMenuMon2Entries:
 	db "@"
 
 PrizeMenuMon2Cost:
-	coins 2500
-	coins 2500
-	coins 9999
+	bcd2 2500
+	bcd2 2500
+	bcd2 9999
 	db "@"
 
 PrizeMenuTMsEntries:
