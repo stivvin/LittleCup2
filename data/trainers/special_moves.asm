@@ -299,7 +299,7 @@ SpecialTrainerMoves:
 
 	db SABRINA, 1
 	; drowzee
-	db 1, PSYCHIC_M, HYPNOSIS, NO_MOVE, NO_MOVE
+	db 1, PSYCHIC_M, HYPNOSIS, DREAM_EATER, NO_MOVE
 	; exeggcute
 	db 2, PSYCHIC_M, HYPNOSIS, NO_MOVE, NO_MOVE
 	; abra
