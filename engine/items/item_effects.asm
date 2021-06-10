@@ -1669,7 +1669,8 @@ ItemUseXStat:
 ItemUsePokeflute:
 	ld a, [wIsInBattle]
 	and a
-	jr nz, .inBattle
+;	jr nz, .inBattle
+	ret nz
 ; if not in battle
 	call ItemUseReloadOverworldData
 	ld a, [wCurMap]
