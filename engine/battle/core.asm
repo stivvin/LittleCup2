@@ -941,6 +941,9 @@ TrainerBattleVictory:
 	call DelayFrames
 	call PrintEndBattleText
 ; win money
+	ld a, [wCurMap]
+	cp ROUTE_24
+	ret z
 	ld hl, MoneyForWinningText
 	call PrintText
 	ld de, wPlayerMoney + 2
