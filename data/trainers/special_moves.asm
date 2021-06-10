@@ -234,7 +234,7 @@ SpecialTrainerMoves:
 	db 6, SWORDS_DANCE, QUICK_ATTACK, BIDE, NO_MOVE
 	db 0
 
-	ROCKET, 39 ; 10F guy
+	db ROCKET, 39 ; 10F guy
 	; lickitung
 	db 1, SWORDS_DANCE, WRAP, EARTHQUAKE, BODY_SLAM
 	db 0
