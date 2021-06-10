@@ -174,7 +174,7 @@ SpecialTrainerMoves:
 	db 3, THUNDERBOLT, ICE_BEAM, PSYCHIC_M, HYPER_BEAM
 	db 0
 
-	db RIVAL2, 1 ; squirtle
+	db RIVAL2, 4 ; squirtle
 	; pidgey
 	db 1, SAND_ATTACK, DOUBLE_TEAM, SUBSTITUTE, SWIFT
 	; gastly
@@ -189,7 +189,7 @@ SpecialTrainerMoves:
 	db 6, BUBBLEBEAM, BODY_SLAM, DIG, ICE_BEAM
 	db 0
 
-	db RIVAL2, 2 ; bulbasaur
+	db RIVAL2, 5 ; bulbasaur
 	; pidgey
 	db 1, SAND_ATTACK, DOUBLE_TEAM, SUBSTITUTE, SWIFT
 	; gastly
@@ -204,7 +204,7 @@ SpecialTrainerMoves:
 	db 6, BODY_SLAM, DIG, NO_MOVE, NO_MOVE
 	db 0
 
-	db RIVAL2, 3 ; charmander
+	db RIVAL2, 6 ; charmander
 	; pidgey
 	db 1, SAND_ATTACK, DOUBLE_TEAM, SUBSTITUTE, SWIFT
 	; gastly
@@ -217,6 +217,21 @@ SpecialTrainerMoves:
 	db 5, BUBBLEBEAM, ICE_BEAM, TRI_ATTACK, WITHDRAW
 	; charmander
 	db 6, BODY_SLAM, DIG, SUBMISSION, NO_MOVE
+	db 0
+
+	db KOGA, 1
+	; koffing
+	db 1, FIRE_BLAST, EXPLOSION, NO_MOVE, NO_MOVE
+	; bulbasaur
+	db 2, TOXIC, LEECH_SEED, SLEEP_POWDER, RAZOR_LEAF
+	; venonat
+	db 3, TOXIC, SLEEP_POWDER, PSYCHIC_M, NO_MOVE
+	; ekans
+	db 4, TOXIC, WRAP, NO_MOVE, NO_MOVE
+	; gastly
+	db 5, TOXIC, CONFUSE_RAY, NIGHT_SHADE, PSYCHIC_M
+	; scyther
+	db 6, SWORDS_DANCE, QUICK_ATTACK, BIDE, NO_MOVE
 	db 0
 
 
