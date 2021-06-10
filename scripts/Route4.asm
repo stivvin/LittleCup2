@@ -5,6 +5,7 @@ Route4_Script:
 	ld a, [wRoute4CurScript]
 	call ExecuteCurMapScriptInTable
 	ld [wRoute4CurScript], a
+	ResetEvent EVENT_BEAT_MT_MOON_3_TRAINER_0
 	ret
 
 Route4_ScriptPointers:
