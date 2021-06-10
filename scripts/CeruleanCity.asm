@@ -39,6 +39,10 @@ IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	ret nz
 ENDC
+	CheckEvent EVENT_BEAT_ROUTE24_ROCKET
+	jr nz, .beatnuggetbridge
+	ResetEventRange EVENT_BEAT_ROUTE_24_TRAINER_0, EVENT_BEAT_ROUTE_24_TRAINER_5
+.beatnuggetbridge
 	CheckEvent EVENT_BEAT_CERULEAN_ROCKET_THIEF
 	jr nz, .skipRocketThiefEncounter
 	ld hl, CeruleanCityCoords1
