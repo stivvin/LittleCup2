@@ -1669,8 +1669,7 @@ ItemUseXStat:
 ItemUsePokeflute:
 	ld a, [wIsInBattle]
 	and a
-;	jr nz, .inBattle
-	ret nz
+	jr nz, .inBattle
 ; if not in battle
 	call ItemUseReloadOverworldData
 	ld a, [wCurMap]
@@ -1703,46 +1702,9 @@ ItemUsePokeflute:
 	ld hl, PlayedFluteNoEffectText
 	jp PrintText
 .inBattle
-	xor a
-	ld [wWereAnyMonsAsleep], a
-	ld b, ~SLP & $ff
-	ld hl, wPartyMon1Status
-	call WakeUpEntireParty
-	ld a, [wIsInBattle]
-	dec a ; is it a trainer battle?
-	jr z, .skipWakingUpEnemyParty
-; if it's a trainer battle
-	ld hl, wEnemyMon1Status
-	call WakeUpEntireParty
-.skipWakingUpEnemyParty
-	ld hl, wBattleMonStatus
-	ld a, [hl]
-	and b ; remove Sleep status
-	ld [hl], a
-	ld hl, wEnemyMonStatus
-	ld a, [hl]
-	and b ; remove Sleep status
-	ld [hl], a
-	call LoadScreenTilesFromBuffer2 ; restore saved screen
-	ld a, [wWereAnyMonsAsleep]
-	and a ; were any pokemon asleep before playing the flute?
 	ld hl, PlayedFluteNoEffectText
 	jp z, PrintText ; if no pokemon were asleep
-; if some pokemon were asleep
-	ld hl, PlayedFluteHadEffectText
-	call PrintText
-	ld a, [wLowHealthAlarm]
-	and $80
-	jr nz, .skipMusic
-	call WaitForSoundToFinish ; wait for sound to end
-	farcall Music_PokeFluteInBattle ; play in-battle pokeflute music
-.musicWaitLoop ; wait for music to finish playing
-	ld a, [wChannelSoundIDs + Ch7]
-	and a ; music off?
-	jr nz, .musicWaitLoop
-.skipMusic
-	ld hl, FluteWokeUpText
-	jp PrintText
+
 
 ; wakes up all party pokemon
 ; INPUT:
