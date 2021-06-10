@@ -48,6 +48,11 @@ GameCorner_ScriptPointers:
 	dw CeladonGameCornerScript2
 
 CeladonGameCornerScript0:
+	ResetEvent EVENT_BEAT_ROCKET_HIDEOUT_4_TRAINER_0 ; door guards
+	ResetEvent EVENT_BEAT_ROCKET_HIDEOUT_4_TRAINER_1
+	CheckEvent EVENT_BEAT_ROCKET_HIDEOUT_GIOVANNI
+	ret nz
+	ResetEvent EVENT_ROCKET_HIDEOUT_4_DOOR_UNLOCKED
 	ret
 
 CeladonGameCornerScript1:
