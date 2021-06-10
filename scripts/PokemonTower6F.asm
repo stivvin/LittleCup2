@@ -34,7 +34,7 @@ PokemonTower6Script0:
 	call DisplayTextID
 	ld a, RESTLESS_SOUL
 	ld [wCurOpponent], a
-	ld a, 5
+	ld a, 10
 	ld [wCurEnemyLVL], a
 	ld a, $4
 	ld [wPokemonTower6FCurScript], a
