@@ -276,12 +276,24 @@ OverworldLoopLessDelay::
 .moveAhead2
 	ld hl, wFlags_0xcd60
 	res 2, [hl]
+	;B button to double speed. Derived from Ed Mann's running shoes
+	ld a, [hJoyHeld]
+	and B_BUTTON
+	jr nz, .sprinting
 	ld a, [wWalkBikeSurfState]
 	dec a ; riding a bike?
 	jr nz, .normalPlayerSpriteAdvancement
 	ld a, [wd736]
 	bit 6, a ; jumping a ledge?
 	jr nz, .normalPlayerSpriteAdvancement
+	jr .doubleSpeed ;non sprinting bike = double speed
+.sprinting
+	ld a, [wWalkBikeSurfState]
+	dec a ; sprinting on bike = quad speed
+	jr nz, .doubleSpeed
+	call DoBikeSpeedup
+	call DoBikeSpeedup
+.doubleSpeed
 	call DoBikeSpeedup
 .normalPlayerSpriteAdvancement
 	call AdvancePlayerSprite
