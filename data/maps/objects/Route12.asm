@@ -12,7 +12,7 @@ Route12_Object:
 	sign 11, 63, 12 ; Route12Text12
 
 	def_objects
-	object SPRITE_SNORLAX, 10, 62, STAY, DOWN, 1 ; person
+	object SPRITE_MONSTER, 10, 62, STAY, DOWN, 1 ; person
 	object SPRITE_FISHER, 14, 31, STAY, LEFT, 2, OPP_FISHER, 3
 	object SPRITE_FISHER, 5, 39, STAY, UP, 3, OPP_FISHER, 4
 	object SPRITE_COOLTRAINER_M, 11, 92, STAY, LEFT, 4, OPP_JR_TRAINER_M, 9

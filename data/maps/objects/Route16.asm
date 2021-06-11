@@ -23,6 +23,6 @@ Route16_Object:
 	object SPRITE_BIKER, 9, 11, STAY, LEFT, 4, OPP_BIKER, 6
 	object SPRITE_BIKER, 6, 10, STAY, RIGHT, 5, OPP_CUE_BALL, 3
 	object SPRITE_BIKER, 3, 12, STAY, RIGHT, 6, OPP_BIKER, 7
-	object SPRITE_SNORLAX, 26, 10, STAY, DOWN, 7 ; person
+	object SPRITE_MONSTER, 26, 10, STAY, DOWN, 7 ; person
 
 	def_warps_to ROUTE_16
