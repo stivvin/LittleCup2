@@ -806,6 +806,9 @@ ItemUseMedicine:
 	ld a, [wIsInBattle]
 	and a
 	jp nz, ItemUseNotTime ; can't use medicine in battle
+	ld a, [wCurMap]
+	cp ROUTE_24
+	jp z, ItemUseNotTime ; can't use items on Nugget Bridge
 	ld a, [wPartyCount]
 	and a
 	jp z, .emptyParty
