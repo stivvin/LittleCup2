@@ -66,6 +66,7 @@ SpecialTrainerMoves:
 	db ROCKET, 5
 	; diglett
 	db 3, DIG, SCRATCH, NO_MOVE, NO_MOVE
+	db 0
 
 	db BUG_CATCHER, 11
 	; venonat
