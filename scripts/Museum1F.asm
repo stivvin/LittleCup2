@@ -186,28 +186,8 @@ Museum1FText_5c251:
 	text_end
 
 Museum1FText3:
-	text_asm
-	CheckEvent EVENT_GOT_OLD_AMBER
-	jr nz, .got_item
-	ld hl, Museum1FText_5c28e
-	call PrintText
-	lb bc, OLD_AMBER, 1
-	call GiveItem
-	jr nc, .bag_full
-	SetEvent EVENT_GOT_OLD_AMBER
-	ld a, HS_OLD_AMBER
-	ld [wMissableObjectIndex], a
-	predef HideObject
-	ld hl, ReceivedOldAmberText
-	jr .done
-.bag_full
-	ld hl, Museum1FText_5c29e
-	jr .done
-.got_item
-	ld hl, Museum1FText_5c299
-.done
-	call PrintText
-	jp TextScriptEnd
+	text_far _MuseumNoAmber
+	text_end
 
 Museum1FText_5c28e:
 	text_far _Museum1FText_5c28e

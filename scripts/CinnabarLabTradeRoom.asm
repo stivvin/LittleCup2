@@ -17,9 +17,9 @@ Lab2Text2:
 	jr Lab2DoTrade
 
 Lab2Text3:
-	text_asm
-	ld a, TRADE_FOR_CRINKLES
-	ld [wWhichTrade], a
+	text_far _LabNoTradeText
+	text_end
+	
 Lab2DoTrade:
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd

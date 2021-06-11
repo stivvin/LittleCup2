@@ -7,3 +7,7 @@ _CeruleanHouse1Text1::
 	cont "you please trade"
 	cont "with him?"
 	done
+
+_CeruleanHouse1NoTradeText::
+	text "I have nothing for"
+	line "you."

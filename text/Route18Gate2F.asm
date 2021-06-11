@@ -13,3 +13,7 @@ _Route18GateUpstairsText_4999f::
 	para "There are people"
 	line "swimming!"
 	done
+
+_Route18GateUpstairsNoTradeText::
+	text "I have nothing for"
+	line "you."

@@ -7,3 +7,8 @@ _Lab2Text1::
 	line "rare, prehistoric"
 	cont "#MON!"
 	done
+
+_LabNoTradeText::
+	text "I have nothing for"
+	line "you."
+	done

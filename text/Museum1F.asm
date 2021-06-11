@@ -106,3 +106,8 @@ _Museum1FText_5c2bc::
 	text "The AMBER is"
 	line "clear and gold!"
 	done
+
+_MuseumNoAmber::
+	text "I have nothing for"
+	line "you."
+	done

@@ -8,6 +8,6 @@ VermilionTradeHouse_Object:
 	def_signs
 
 	def_objects
-	object SPRITE_LITTLE_GIRL, 3, 5, STAY, UP, 1 ; person
+;	object SPRITE_LITTLE_GIRL, 3, 5, STAY, UP, 1 ; person
 
 	def_warps_to VERMILION_TRADE_HOUSE
