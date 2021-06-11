@@ -242,8 +242,8 @@ SpecialTrainerMoves:
 	db RIVAL2, 7 ; squirtle
 	; pidgey
 	db 1, SAND_ATTACK, DOUBLE_TEAM, TOXIC, FLY
-	; gastly
-	db 2, LICK, CONFUSE_RAY, THUNDERBOLT, NO_MOVE
+	; rhyhorn
+	db 2, EARTHQUAKE, ROCK_SLIDE, NO_MOVE, NO_MOVE
 	; abra
 	db 3, PSYCHIC_M, THUNDER_WAVE, NO_MOVE, NO_MOVE
 	; ponyta
@@ -251,14 +251,14 @@ SpecialTrainerMoves:
 	; exeggcute
 	db 5, HYPNOSIS, BARRAGE, SELFDESTRUCT, NO_MOVE
 	; squirtle
-	db 6, SURF, BODY_SLAM, EARTHQUAKE, ICE_BEAM
+	db 6, SURF, BODY_SLAM, DIG, ICE_BEAM
 	db 0
 
 	db RIVAL2, 8 ; bulbasaur
 	; pidgey
 	db 1, SAND_ATTACK, DOUBLE_TEAM, TOXIC, FLY
-	; gastly
-	db 2, LICK, CONFUSE_RAY, THUNDERBOLT, NO_MOVE
+	; rhyhorn
+	db 2, EARTHQUAKE, ROCK_SLIDE, NO_MOVE, NO_MOVE
 	; abra
 	db 3, PSYCHIC_M, THUNDER_WAVE, NO_MOVE, NO_MOVE
 	; shellder
@@ -272,8 +272,8 @@ SpecialTrainerMoves:
 	db RIVAL2, 9 ; charmander
 	; pidgey
 	db 1, SAND_ATTACK, DOUBLE_TEAM, TOXIC, FLY
-	; gastly
-	db 2, LICK, CONFUSE_RAY, THUNDERBOLT, NO_MOVE
+	; rhyhorn
+	db 2, EARTHQUAKE, ROCK_SLIDE, NO_MOVE, NO_MOVE
 	; abra
 	db 3, PSYCHIC_M, THUNDER_WAVE, NO_MOVE, NO_MOVE
 	; exeggcute
@@ -281,7 +281,7 @@ SpecialTrainerMoves:
 	; shellder
 	db 5, SURF, ICE_BEAM, TRI_ATTACK, WITHDRAW
 	; charmander
-	db 6, SWORDS_DANCE, FIRE_BLAST, BODY_SLAM, EARTHQUAKE
+	db 6, SWORDS_DANCE, FIRE_BLAST, BODY_SLAM, DIG
 	db 0
 
 	db GIOVANNI, 2
@@ -314,17 +314,17 @@ SpecialTrainerMoves:
 
 	db BLAINE, 1
 	; growlithe
-	db 1, FIRE_BLAST, DOUBLE_EDGE, REST, NO_MOVE
+	db 1, FIRE_BLAST, DOUBLE_EDGE, REST, REFLECT
 	; ponyta
 	db 2, FIRE_BLAST, FIRE_SPIN, DOUBLE_EDGE, HORN_DRILL
 	; ponyta
 	db 3, FIRE_BLAST, FIRE_SPIN, DOUBLE_EDGE, HORN_DRILL
 	; growlithe
-	db 4, FIRE_BLAST, DOUBLE_EDGE, REST, NO_MOVE
+	db 4, FIRE_BLAST, DOUBLE_EDGE, REST, REFLECT
 	; electabuzz
 	db 5, THUNDER, FIRE_PUNCH, ICE_PUNCH, REFLECT
 	; magmar
-	db 6, FIRE_BLAST, THUNDERPUNCH, PSYCHIC_M, REFLECT
+	db 6, FIRE_BLAST, PSYCHIC_M, REST, REFLECT
 	db 0
 
 	db GIOVANNI, 3
