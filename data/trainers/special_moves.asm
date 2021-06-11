@@ -8,7 +8,7 @@
 SpecialTrainerMoves:
 	db BROCK, 1
 	; onix
-	db 2, TACKLE, SCREECH, BIDE, NO_MOVE
+	db 2, TACKLE, SCREECH, BIDE, BIND
 	db 0
 
 	db LASS, 3
