@@ -420,8 +420,8 @@ JugglerData:
 ; Victory Road 2F
 	db 5, DROWZEE, DROWZEE, ABRA, ABRA, 0
 ; Fuchsia Gym
-	db 5, DROWZEE, DROWZEE, ABRA, DROWZEE, 0
-	db 5, DROWZEE, DROWZEE, 0
+	db $FF, 5, DROWZEE, 5, DROWZEE, 5, ABRA, 5, DROWZEE, 0
+	db $FF, 5, DROWZEE, 5, DROWZEE, 5, GASTLY, 5, SANDSHREW, 0
 ; Victory Road 2F
 	db 5, DROWZEE, 0 ; mr mime
 ; Unused
